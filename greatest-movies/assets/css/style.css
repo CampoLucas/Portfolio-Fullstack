@@ -254,7 +254,7 @@ main > section + section { /* the next section after the front page*/
 }
 
 .site-footer .footer-inner {
-    width: min(1100px, 100%);
+    /* width: min(1100px, 100%); */
     margin: 0 auto;
     /* padding: 24vh 8vw 3.5rem; */
     padding-top: 24vh;
