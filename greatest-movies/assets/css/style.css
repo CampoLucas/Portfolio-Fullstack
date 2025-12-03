@@ -84,7 +84,9 @@ div.scrollmenu a.cover .release-year{
 
 :root {
     --nav-height: 64px;
-    --nav-bg: linear-gradient(to bottom, rgb(0, 0, 0), var(--page-bg));
+    --nav-bg-scroll: linear-gradient(to bottom, rgb(0, 0, 0), var(--page-bg));
+    /* --nav-bg-scroll: rgba(var(28, 28, 28, .5)); */
+    --nav-bg: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0,0,0,0));
 }
 
 .topnav {
@@ -97,13 +99,62 @@ div.scrollmenu a.cover .release-year{
     align-items: center;
     padding: 0 1rem;
     z-index: 9999;
-    transition: background 5s ease;
-    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    /* transition: background 5s ease;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)); */
+    background: transparent;
+    overflow: hidden;
 }
 
-.topnav.scrolled {
-    background: var(--nav-bg);
+.topnav::before,
+.topnav::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
 }
+
+
+.topnav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--nav-bg);
+    opacity: 1; 
+    pointer-events: none;
+}
+
+.topnav::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* background: linear-gradient(to bottom, rgb(0,0,0), var(--page-bg)); */
+    background: var(--nav-bg-scroll);
+    opacity: 0;
+    transition: opacity .5s ease;
+    pointer-events: none;
+}
+
+.topnav.scrolled::after {
+    opacity: 1;
+}
+
+.topnav * {
+    position: relative;
+    z-index: 2;
+}
+
+.topnav::before {
+    transition: opacity .5s ease;
+}
+
+.topnav.scrolled::before {
+    transition: opacity .5s ease;
+}
+
+/* .topnav.scrolled {
+    background: #00ff26;
+} */
 
 .topnav a {
     color: #f2f2f2;
@@ -130,7 +181,7 @@ div.scrollmenu a.cover .release-year{
 /* Front page styles */
 
 :root {
-    --page-bg: #1c1c1c;
+    --page-bg: rgb(28, 28, 28);
 }
 
 .front-page-slider {
@@ -183,7 +234,7 @@ div.scrollmenu a.cover .release-year{
     left: 0;
     right: 0;
     bottom: 0;
-    height: 25vh; /* bottom 10% */
+    height: 25vh;
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--page-bg) 100%);
     pointer-events: none;
 }
@@ -200,13 +251,12 @@ main > section + section { /* the next section after the front page*/
 }
 
 .site-footer .footer-inner {
-    /* centered container with large left/right spacing */
     width: min(1100px, 100%);
     margin: 0 auto;
-    padding: 24vh 8vw 3.5rem; /* big top spacing (~25% height), lots of left/right padding */
+    padding: 24vh 8vw 3.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center; /* center the block horizontally */
+    align-items: center;
     gap: 1rem;
 }
 
@@ -279,11 +329,6 @@ main > section + section { /* the next section after the front page*/
 /* Icons style */
 
 .icon {
-    /* 
-    width: 20px;
-    height: 20px;
-    background-size: contain;
-    */
     display: inline-block;
     background-position: center; 
     background-repeat: no-repeat;
