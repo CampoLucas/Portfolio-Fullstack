@@ -9,10 +9,6 @@
 body {
     margin: 0;
     /* font-family: Arial, Helvetica, sans-serif; */
-}
-
-main {
-    /* margin: 15px; */
     background-color: var(--page-bg);
 }
 
@@ -119,6 +115,10 @@ a.cover .genre{
     a.cover .release-year {
         font-size: 0.8rem;
     }
+
+    :root {
+        --page-bg: rgb(25,5,1);
+    }
 }
 
 /* Top nav bar styles */
@@ -185,10 +185,6 @@ a.cover .genre{
 .topnav.scrolled::before {
     transition: opacity .5s ease;
 }
-
-/* .topnav.scrolled {
-    background: #00ff26;
-} */
 
 .topnav a {
     color: #f2f2f2;
@@ -277,7 +273,7 @@ main > section + section { /* the next section after the front page*/
 /* Footer styles */
 .site-footer {
     color: #eaeaea;
-    background: linear-gradient(180deg, var(--page-bg), rgb(0, 0, 0));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(0, 0, 0));
 }
 
 .site-footer .footer-inner {
@@ -357,6 +353,15 @@ main > section + section { /* the next section after the front page*/
 }
 
 /* Movie slider */
+:root {
+    --scroll-btn-width: 85px;
+}
+
+.slider-title {
+    padding-left: var(--scroll-btn-width);
+    color: white;
+    margin-bottom: 6px;
+}
 
 .carousel-wrapper {
   position: relative;
@@ -366,7 +371,7 @@ main > section + section { /* the next section after the front page*/
   overflow: hidden;
   box-sizing: border-box;
   /* start with 85px padding-left to simulate the space before left arrow appears */
-  padding-left: 85px;
+  padding-left: var(--scroll-btn-width);
   transition: padding 0.3s ease;
 }
 
@@ -390,7 +395,7 @@ main > section + section { /* the next section after the front page*/
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 85px;
+    width: var(--scroll-btn-width);
     border: none;
     cursor: pointer;
     z-index: 5;
@@ -423,6 +428,12 @@ main > section + section { /* the next section after the front page*/
 
 .scroll-btn:hover {
   background-color: rgba(0,0,0,0.2);
+}
+
+@media (max-width: 640px) {
+    :root {
+        --scroll-btn-width: 2rem;
+    }
 }
 
 /* Icons style */
