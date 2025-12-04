@@ -112,12 +112,41 @@ a.cover .genre{
         font-size: 0.9rem;
     }
 
-    a.cover .release-year {
-        font-size: 0.8rem;
+    :root {
+        --page-bg: rgb(25,5,1);
+        --nav-height: 45px;
+    }
+
+    a.contact-link {
+        font-size: small;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+    a.cover .thumb {
+        width: 220px;
+        aspect-ratio: 16 / 9;
+        height: auto; /* ensures aspect-ratio controls height */
+        margin-bottom: 0;
+    }
+
+    a.cover {
+        padding: 10px;
+        margin: 2px;
+        padding: 5px;
+    }
+
+    a.cover .text {
+        font-size: 0.9rem;
+    }
+
+    a.cover .thumb img {
+        object-fit: cover;
     }
 
     :root {
         --page-bg: rgb(25,5,1);
+        --nav-height: 45px;
     }
 }
 
@@ -435,6 +464,14 @@ main > section + section { /* the next section after the front page*/
         --scroll-btn-width: 2rem;
     }
 }
+
+@media (orientation: landscape) and (max-width: 1000px) {
+    :root {
+        --scroll-btn-width: 3rem;
+    }
+}
+
+
 
 /* Movie popup modal */
 .movie-modal {
