@@ -4,6 +4,7 @@
         { src: './assets/media/movies/the-shining/front02.jpg', title: 'The Shining' },
         { src: './assets/media/movies/the-shining/front03.jpg', title: 'The Shining' },
         { src: './assets/media/movies/the-shining/front04.jpg', title: 'The Shining' },
+        { src: './assets/media/movies/the-shining/front05.jpg', title: 'The Shining' },
         { src: './assets/media/movies/rocketman/front01.jpg', title: 'Rocketman' },
         { src: './assets/media/movies/rocketman/front02.jpg', title: 'Rocketman' },
         { src: './assets/media/movies/rocketman/front03.jpg', title: 'Rocketman' },
@@ -17,6 +18,7 @@
         { src: './assets/media/movies/ford-v-ferrari/front01.jpg', title: 'Forc v Ferrari' },
         { src: './assets/media/movies/ford-v-ferrari/front02.jpg', title: 'Forc v Ferrari' },
         { src: './assets/media/movies/ford-v-ferrari/front03.jpg', title: 'Forc v Ferrari' },
+        { src: './assets/media/movies/ford-v-ferrari/front04.jpg', title: 'Forc v Ferrari' },
     ];
 
     function pickRandom(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
