@@ -356,6 +356,75 @@ main > section + section { /* the next section after the front page*/
     .social-link { width: 40px; height: 40px; }
 }
 
+/* Movie slider */
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* start with 85px padding-left to simulate the space before left arrow appears */
+  padding-left: 85px;
+  transition: padding 0.3s ease;
+}
+
+.carousel-wrapper.active-left {
+  /* remove the left spacing when the left arrow shows */
+  padding-left: 0;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 85px;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.scroll-btn.left {
+    left: 0; 
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0, 0, 0, 0));
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-btn.right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-btn.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
 /* Icons style */
 
 .icon {
@@ -385,3 +454,4 @@ main > section + section { /* the next section after the front page*/
 <path d='M22 6.5L12 13.5L2 6.5' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/>\
 </svg>");
 }
+
