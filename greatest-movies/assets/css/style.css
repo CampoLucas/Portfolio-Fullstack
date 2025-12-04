@@ -211,7 +211,7 @@ a.cover .genre{
 /* Front page styles */
 
 .front-page-slider {
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     background-position: center;
     background-size: cover;
