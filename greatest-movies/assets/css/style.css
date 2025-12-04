@@ -122,7 +122,7 @@ a.cover .genre{
     }
 }
 
-@media (orientation: landscape) and (max-width: 1000px) {
+@media (orientation: landscape) and (max-width: 1080px) {
     a.cover .thumb {
         width: 220px;
         aspect-ratio: 16 / 9;
