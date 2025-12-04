@@ -3,25 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Campo - Full Stack Portfolio</title>
+    <title>Great Movies</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Lucas Campo</h1>
-        <h2>Web Developer</h2>
-    </header>
     
-    <hr />
+    <header>
+        <nav class="topnav">
+            <a class="active" href="../index.html">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <main>
+    <main>                
+        <section id="front-page-slider" class="front-page-slider" aria-label="Featured movie">
+            <div class="front-page-gradient" aria-hidden="true"></div>
+
+            <div class="front-page-caption">
+                <div class="front-page-content">
+                    <h1 class="site-title">Greatest Movies</h1>
+                    <p id="front-page-movie" class="featured-movie" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
+
         <section>
-            <h3>Projects</h3>
-            <ul>
-                <li><a href="greatest-movies/greatest-movies.html">Greatest Movies</a></li>
-                <li><a href="https://campolucas.github.io/">Game Dev Portfolio</a></li>
-            </ul>
+            <h2 class="slider-title">My Top 10 Movies</h2>
+            <div class="carousel-wrapper">
+                <button class="scroll-btn left" aria-label="Scroll left">&#10094;</button>
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="carousel-track"></div>
+
+                    <template id="movie-cover-template">
+                        <a class="cover" href="">
+                            <div class="thumb">
+                                <img src="">
+                            </div>
+                            <p class="text title"></p>
+                            <p class="text release-year"></p>
+                        </a>
+                    </template>
+
+                </div>
+                    
+                <button class="scroll-btn right" aria-label="Scroll right">&#10095;</button>
+            </div>
         </section>
     </main>
-    
+
+    <footer class="site-footer">
+        <div class="footer-inner" id="contact">
+            <div class="footer-brand">
+                <h3 class="footer-title">Greatest Movies</h3>
+                <p class="footer-sub">By Lucas Campo</p>
+            </div>
+
+            <div class="footer-contacts" role="contentinfo">
+                <div class="social">
+                    <a class="icon linkedin social-link" href="https://www.linkedin.com/in/lucascampo3333/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"></a>
+                    <a class="icon email social-link" href="mailto:campolucas2001@gmail.com" aria-label="Send email"></a>
+                </div>
+
+                <div class="contact-info">
+                    <a href="mailto:campolucas2001@gmail.com" class="contact-link">campolucas2001@gmail.com</a>
+                    <span class="contact-sep">•</span>
+                    <a href="tel:+1234567890" class="contact-link">+54 11 2740-3576</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Movie modal (reused for every movie) -->
+    <div id="movie-modal" class="movie-modal">
+        <div class="movie-modal-content" role="dialog" aria-modal="true">
+            <button class="movie-close" aria-label="Close popup">&times;</button>
+            <div id="movie-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Template for the popup -->
+    <template id="movie-popup-template">
+        <article class="movie-popup">
+            <div class="movie-popup-image-wrap">
+                <img class="movie-popup-image" src="" alt="">
+            </div>
+            <div class="movie-popup-text">
+                <h2 class="movie-popup-title"></h2>
+                <p class="movie-popup-year"></p>
+                <p class="movie-popup-description"></p>
+            </div>
+
+        </article>
+
+    </template>
+
+    <script src="./assets/js/movies/popups.js"></script>
+    <script src="./assets/js/movies/movies.js"></script>
+    <script src="./assets/js/movie-covers.js"></script>
+    <script src="./assets/js/front-page-slider.js"></script>
+    <script src="./assets/js/nav-scroll-effect.js"></script>
+    <script src="./assets/js/movie-slider.js"></script>
+    <script src="./assets/js/movie-popup.js"></script>
 </body>
 </html>
