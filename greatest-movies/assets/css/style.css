@@ -464,6 +464,12 @@ main > section + section { /* the next section after the front page*/
     animation: scaleIn .25s ease;
 }
 
+.movie-modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .movie-close {
     position: absolute;
     top: 12px;
