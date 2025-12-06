@@ -240,7 +240,7 @@ a.cover .genre{
 /* Front page styles */
 
 .front-page-slider {
-    height: 100dvh;
+    height: 100svh;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -266,12 +266,12 @@ a.cover .genre{
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    padding: 6vh 1rem 2rem; /* push content slightly above bottom */
+    padding: 6svh 1rem 2rem; /* push content slightly above bottom */
 }
 
 .front-page-content .site-title {
     margin: 0;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5svw, 4rem);
     font-weight: 800;
     letter-spacing: 0.02em;
     text-shadow: 0 3px 18px rgba(0,0,0,0.6);
@@ -279,7 +279,7 @@ a.cover .genre{
 
 .front-page-content .featured-movie {
     margin: 0;
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: clamp(1rem, 2.5svw, 1.4rem);
     font-weight: 600;
     opacity: 0.95;
 }
@@ -289,7 +289,7 @@ a.cover .genre{
     left: 0;
     right: 0;
     bottom: 0;
-    height: 25vh;
+    height: 25svh;
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--page-bg) 100%);
     pointer-events: none;
 }
@@ -307,7 +307,7 @@ main > section + section { /* the next section after the front page*/
 
 .site-footer .footer-inner {
     margin: 0 auto;
-    padding-top: 24vh;
+    padding-top: 24svh;
     padding-bottom: 3.5rem;
     display: flex;
     flex-direction: column;
@@ -377,7 +377,7 @@ main > section + section { /* the next section after the front page*/
 .contact-sep { opacity: 0.5; }
 
 @media (max-width: 640px) {
-    .site-footer .footer-inner { padding: 16vh 6vw 2.5rem; }
+    .site-footer .footer-inner { padding: 16svh 6svw 2.5rem; }
     .social-link { width: 40px; height: 40px; }
 }
 
@@ -502,7 +502,7 @@ main > section + section { /* the next section after the front page*/
 }
 
 .movie-modal-content {
-    max-height: 90vh;
+    max-height: 90svh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
