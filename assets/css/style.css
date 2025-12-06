@@ -240,7 +240,7 @@ a.cover .genre{
 /* Front page styles */
 
 .front-page-slider {
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100svh;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -459,7 +459,17 @@ main > section + section { /* the next section after the front page*/
   background-color: rgba(0,0,0,0.2);
 }
 
+@media (max-width: 640px) {
+    :root {
+        --scroll-btn-width: 2rem;
+    }
+}
 
+@media (orientation: landscape) and (max-width: 1000px) {
+    :root {
+        --scroll-btn-width: 3rem;
+    }
+}
 
 
 
