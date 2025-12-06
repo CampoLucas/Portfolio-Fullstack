@@ -240,7 +240,7 @@ a.cover .genre{
 /* Front page styles */
 
 .front-page-slider {
-    height: 100svh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     background-position: center;
     background-size: cover;
