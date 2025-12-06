@@ -459,17 +459,7 @@ main > section + section { /* the next section after the front page*/
   background-color: rgba(0,0,0,0.2);
 }
 
-@media (max-width: 640px) {
-    :root {
-        --scroll-btn-width: 2rem;
-    }
-}
 
-@media (orientation: landscape) and (max-width: 1000px) {
-    :root {
-        --scroll-btn-width: 3rem;
-    }
-}
 
 
 
